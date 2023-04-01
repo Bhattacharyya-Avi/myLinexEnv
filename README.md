@@ -294,5 +294,5 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts true
 ```
 
 # Author Avindra bhattacharyya
-## <a href="mailto:ab.cse.dev@gmail.com">📧</a>
+### <a href="mailto:ab.cse.dev@gmail.com">📧</a>
 ### Thankyou 🌻
