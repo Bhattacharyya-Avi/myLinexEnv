@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>My Linux setup</title>
+
+	<!-- Meta -->
+	<!-- <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Template">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">     -->
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+
+	<!-- FontAwesome JS-->
+	<script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"
+		integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous">
+	</script>
+
+	<!-- Plugin CSS -->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+
+	<!-- Theme CSS -->
+	<link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'> 
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="main-wrapper">
+
+		<article class="blog-post px-2 py-5 p-md-5">
+			<div class="container">
+				<header class="blog-post-header">
+					<h2 class="title mb-2">My Linux Environment setup</h2>
+					<div class="meta mb-3"><span class="date">Solution of diferent problems that I have faced.</span></div>
+					<div class="meta mb-3"><span class="date">Click button to copy commands.</span></div>
+				</header>
+
+				<div class="blog-post-body">
+					<figure class="blog-banner">
+						<a href=""><img class="img-fluid" src="assets/images/install_linux.jpg" alt="image"></a>
+					</figure>
+					<h6>Some basic things</h6>
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">See the current path</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="currentpath" style="outline: 1px solid gray;">
+										pdw
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#currentpath')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- nexwork -->
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">If have issue with network driver follow the commands.</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="network1" style="outline: 1px solid gray;">
+										sudo apt install network-manager
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#network1')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="network2" style="outline: 1px solid gray;">
+										sudo apt update && sudo apt upgrade
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#network2')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="network3" style="outline: 1px solid gray;">
+										sudo lshw -C network
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#network3')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<h4>Let's start with core setup</h4>
+					<!-- curl -->
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Install CURL</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="curl1" style="outline: 1px solid gray;">
+										sudo apt install curl
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#curl1')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="curl" style="outline: 1px solid gray;">
+										curl --version
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#curl')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ngnix -->
+					<h6>Note: If you want to use apache please follow  <a href = "https://httpd.apache.org/">official website </a>. I am using ngnix.</h6>
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Install NGNIX</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="ngnix1" style="outline: 1px solid gray;">
+										sudo add-apt-repository ppa:ondrej/php
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#ngnix1')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="ngnix2" style="outline: 1px solid gray;">
+										sudo apt install -y php-mbstring php-xml php-fpm php-zip php-common php-fpm php-cli unzip
+										curl nginx
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#ngnix2')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="ngnix3" style="outline: 1px solid gray;">
+										apt-get install nginx
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#ngnix3')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="ngnix4" style="outline: 1px solid gray;">
+										sudo apt install software-properties-common
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#ngnix4')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- php -->
+					<h6>Note: please change php version if you don't want to use <b>php8</b>. Get info about php version on <a href = "https://www.php.net/releases/index.php">php release notes</a>.</h6>
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Install PHP</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="php1" style="outline: 1px solid gray;">
+										sudo apt install php8.0-fpm
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#php1')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="php2" style="outline: 1px solid gray;">
+										php -v
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#php2')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="php3" style="outline: 1px solid gray;">
+										sudo apt-get install php8.0-mysql php8.0-mbstring php8.0-xml php8.0-bcmath
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#php3')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="php4" style="outline: 1px solid gray;">
+										systemctl status php8.0-fpm
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#php4')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--Composer -->
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Install Composer</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="Composer1" style="outline: 1px solid gray;">
+										sudo curl -s https://getcomposer.org/installer | php
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#Composer1')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="Composer2" style="outline: 1px solid gray;">
+										sudo mv composer.phar /usr/local/bin/composer
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#Composer2')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="Composer3" style="outline: 1px solid gray;">
+										sudo curl -s https://getcomposer.org/installer | php
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#Composer3')" >copy</button>
+								</div>
+
+								<span>To check composer is installed or not</span>
+								<div class="col-lg-10">
+									<p id="Composer4" style="outline: 1px solid gray;">
+										composer
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#Composer4')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Laravel install-->
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Install Laravel</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="laravel1" style="outline: 1px solid gray;">
+										sudo composer global require laravel/installer
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#laravel1')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group mb-3">
+						<h6>Note: Not the only way to create a project.</h6>
+						<label for="exampleInputEmail1">Create Laravel Project</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="laravel2" style="outline: 1px solid gray;">
+										composer create-project laravel/laravel example-app/laravel project name
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#laravel2')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Mysql-->
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Install Mysql</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="mysql1" style="outline: 1px solid gray;">
+										sudo apt upgrade && sudo apt update
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#mysql1')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="mysql2" style="outline: 1px solid gray;">
+										sudo apt install mysql-client
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#mysql2')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="mysql3" style="outline: 1px solid gray;">
+										sudo apt install mysql-server
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#mysql3')" >copy</button>
+								</div>
+								<h6>
+									<small>
+										Note: After the secure installation command mysql will ask for setup password. 
+										You need to use this password to login mysql or your db.
+									</small>
+								</h6>
+								<div class="col-lg-10">
+									<p id="mysql4" style="outline: 1px solid gray;">
+										sudo mysql_secure_installation
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#mysql4')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="mysql5" style="outline: 1px solid gray;">
+										mysql --version
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#mysql5')" >copy</button>
+								</div>
+							</div>
+						</div>
+
+						<h6>Note: Use any of the command. You need to give mysql password for login</h6>
+						<label for="exampleInputEmail1">Access mysql panel</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="mysql6" style="outline: 1px solid gray;">
+										sudo mysql
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#mysql6')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="mysql7" style="outline: 1px solid gray;">
+										mysql -u root -p
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#mysql7')" >copy</button>
+								</div>
+							</div>
+						</div>
+
+						<label for="exampleInputEmail1">Create or lis of DB</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="mysql8" style="outline: 1px solid gray;">
+										create database databasename;
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#mysql8')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="mysql9" style="outline: 1px solid gray;">
+										show databases;
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#mysql9')" >copy</button>
+								</div>
+							</div>
+						</div>
+
+						<label for="exampleInputEmail1">Change Mysql Password</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="mysql10" style="outline: 1px solid gray;">
+										ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'your database password';
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#mysql10')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Tableplus-->
+
+					<h6>Note: Old version of tableplus will not work on ubuntu22 or grater than that. For more info goto <a href="https://tableplus.com/blog/2019/10/tableplus-linux-installation.html"> Tableplus official site </a> </h6>
+					<div class="form-group mb-3">
+						<span><small><b> For less then ubuntu22 version </b></small></span><br>
+						<label for="exampleInputEmail1">Install Tableplus</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="table1" style="outline: 1px solid gray;">
+										wget -qO - https://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add -
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#table1')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="table2" style="outline: 1px solid gray;">
+										sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/20 tableplus main"
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#table2')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="table3" style="outline: 1px solid gray;">
+										sudo apt install tableplus
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#table3')" >copy</button>
+								</div>
+								
+							</div>
+						</div>
+
+						<span><small><b> For ubuntu22 or grater </b></small></span><br>
+						<label for="exampleInputEmail1">Install Tableplus</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="table4" style="outline: 1px solid gray;">
+										wget -qO - https://deb.tableplus.com/apt.tableplus.com.gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/tableplus-archive.gpg > /dev/null
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#table4')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="table5" style="outline: 1px solid gray;">
+										sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/22 tableplus main"
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#table5')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="table6" style="outline: 1px solid gray;">
+										sudo apt install tableplus
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#table6')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Git-->
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Setup Git</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="git1" style="outline: 1px solid gray;">
+										sudo apt-get install git
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#git1')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="git2" style="outline: 1px solid gray;">
+										git config --global user.name "your github username"
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#git2')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="git3" style="outline: 1px solid gray;">
+										git config --global user.email "your github attached email address"
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#git3')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="git4" style="outline: 1px solid gray;">
+										ssh-keygen -t rsa -b 4096 -C "your github attached email address"
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#git4')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="git5" style="outline: 1px solid gray;">
+										eval "$(ssh-agent -s)"
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#git5')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="git6" style="outline: 1px solid gray;">
+										ssh-add -K /Users/you/.ssh/id_rsa
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#git6')" >copy</button>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+
+					<!-- Vs code -->
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Install VS Code</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="vs1" style="outline: 1px solid gray;">
+										sudo apt-get install wget gpg
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#vs1')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="vs2" style="outline: 1px solid gray;">
+										wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#vs2')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="vs3" style="outline: 1px solid gray;">
+										sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#vs3')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="vs4" style="outline: 1px solid gray;">
+										sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#vs4')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="vs5" style="outline: 1px solid gray;">
+										rm -f packages.microsoft.gpg
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#vs5')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="vs6" style="outline: 1px solid gray;">
+										sudo apt update
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#vs6')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="vs7" style="outline: 1px solid gray;">
+										sudo apt install apt-transport-https
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#vs7')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="vs8" style="outline: 1px solid gray;">
+										sudo apt install code
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#vs8')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h4>End of main part</h4><br><hr>
+
+					<h4>Additional things</h4>
+					<!-- Chrome -->
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Install Chrome</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="chrome1" style="outline: 1px solid gray;">
+										sudo apt install wget
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#chrome1')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="chrome2" style="outline: 1px solid gray;">
+										wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#chrome2')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="chrome3" style="outline: 1px solid gray;">
+										sudo apt install ./google-chrome-stable_current_amd64.deb
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#chrome3')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- valet -->
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Install Valet</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="valet1" style="outline: 1px solid gray;">
+										composer global require cpriego/valet-linux
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#valet1')" >copy</button>
+								</div>
+
+								<div class="col-lg-10">
+									<p id="valet2" style="outline: 1px solid gray;">
+										test -d /.composer && bash /.config/composer/vendor/bin/valet install
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#valet2')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="valet3" style="outline: 1px solid gray;">
+										(export PATH=$PATH:~/.config/composer/vendor/bin
+										ls -al ~/.config/composer/vendor/bin/valet
+										source ~/.bash_profile)
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#valet3')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="valet4" style="outline: 1px solid gray;">
+										valet install
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#valet4')" >copy</button>
+								</div>
+								<div class="col-lg-10">
+									<p id="valet4" style="outline: 1px solid gray;">
+										valet install
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#valet4')" >copy</button>
+								</div>
+
+								<span><small> check valet is installed or not </small></span><br>
+								<div class="col-lg-10">
+									<p id="valet5" style="outline: 1px solid gray;">
+										valet
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#valet5')" >copy</button>
+								</div>
+
+								<span><small> To add directory to valet </small></span><br>
+								<div class="col-lg-10">
+									<p id="valet6" style="outline: 1px solid gray;">
+										valet park
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#valet6')" >copy</button>
+								</div>
+								
+								<span><small> If when package is unable to locate </small></span><br>
+								<div class="col-lg-10">
+									<p id="valet7" style="outline: 1px solid gray;">
+										(test -d /.composer && bash /.composer/vendor/bin/valet install || bash~/.config/composer/vendor/bin/valet install)
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#valet7')" >copy</button>
+								</div>	
+							</div>
+						</div>
+					</div>
+					
+					<!-- Give file edit or modify related permission-->
+					<h6>Note: please run the command if you get issue related with that</h6>
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Edit or Modify related permission</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="permission1" style="outline: 1px solid gray;">		
+										sudo chmod 777 -R /var/www/html
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#permission1')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--Migration driver not found error during migrate command -->
+					<h6>Note: please run the command if you get issue related with migration driver not found error during migrate command</h6>
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Edit or Modify related permission</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="permission2" style="outline: 1px solid gray;">		
+										sudo apt-get install php-mysql
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#permission2')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!--## Package releted issue due to Composer installation or update on project-->
+					<h6>Note: please run the command if you get issue related with migration driver not found error during migrate command</h6>
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Edit or Modify related permission</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="permission3" style="outline: 1px solid gray;">		
+										composer install --ignore-platform-reqs
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#permission3')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!--
+## Remove application from ubuntu
+```
+```
+
+## 
+```
+```
+
+```
+```-->
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Remove application</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="permission4" style="outline: 1px solid gray;">		
+										sudo apt-get remove package-name
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#permission4')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Hide mounted drive form the dock</label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="permission5" style="outline: 1px solid gray;">		
+										gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#permission5')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group mb-3">
+						<label for="exampleInputEmail1">Re-enable mounted drives on the Ubuntu Dock in future </label>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<p id="permission6" style="outline: 1px solid gray;">		
+										gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts true
+									</p>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-outline-secondary" style="
+									height: 35px;
+								" onclick="copyToClipboard('#permission6')" >copy</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<h3 class="mt-5 mb-3">Restyle Terminal</h3>
+					<p>
+						I have followed this vedio. You may follow other video 
+					</p>
+
+					<div class="embed-responsive embed-responsive-16by9">
+						<video width="560" height="315" src="/assets/video/update_ubuntu_terminal.mp4" controls></video>
+						<!-- <iframe width="560" height="315" src="https://www.youtube.com/watch?v=PZTLIVQxxEY&t=667s" frameborder="0"
+							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen></iframe> -->
+					</div>
+					<br><span>Resources:</span>
+					<br><span>Get <a href="https://ohmyz.sh/"> Oh My Zsh </a></span>
+					<br><span>Theme <a href="https://github.com/Bhattacharyya-Avi/powerlevel10k">PowerLevel10k</a></span>
+					<br><span><small>source: https://www.youtube.com/watch?v=PZTLIVQxxEY&t=667s&ab_channel=MuhammadbinYusrat</small></span>
+				</div>
+			</div>
+		</article>
+
+
+		<footer class="footer text-center py-2 theme-bg-dark">
+			<small class="copyright">Created with 
+				<i class="fas fa-heart" style="color: #f7f3f2;"></i> by 
+				<a href="https://is.gd/avindradev" target="_blank">Avindra Bhatacharyya</a> 
+				To Help Others
+			</small>
+		</footer>
+	</div>
+	
+
+	<!-- Javascript -->
+	<script src="assets/plugins/jquery-3.3.1.min.js"></script>
+	<script src="assets/plugins/popper.min.js"></script>
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Page Specific JS -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/blog.js"></script>
+
+	<!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+	<script src="assets/js/demo/style-switcher.js"></script>
+
+	<script>
+		function copyToClipboard(element) {
+		var $temp = $("<input>");
+		$("body").append($temp);
+		$temp.val($(element).text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+		}
+	</script>
+
+</body>
+
+</html>
